@@ -86,7 +86,7 @@
     <string name="exchange">EXCHANGE</string>
     <string name="require_exchange_title">Select 2 players to exchange</string>
     <string name="require_delete_title">Select a player to delete</string>
-    <string name="announce_limit_sub">Sub players reach the limit</string>
+    <string name="announce_limit_sub">The number has reached its limit</string>
     <string name="share">LINE/Twitter</string>
     <string name="no_order">[-]</string>
     <!-- TODO: Remove or change this placeholder text -->
