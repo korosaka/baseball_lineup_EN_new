@@ -75,29 +75,23 @@ public class StartingPlayerListAdapter extends ArrayAdapter<StartingPlayerListIt
         int lengthOfText = textView.length();
         int textSize;
         switch (lengthOfText) {
-            case 8:
-                textSize = 27;
-                break;
-            case 9:
-                textSize = 26;
-                break;
             case 10:
-                textSize = 23;
+                textSize = 25;
                 break;
             case 11:
-                textSize = 21;
+                textSize = 23;
                 break;
             case 12:
-                textSize = 20;
+                textSize = 21;
                 break;
             case 13:
-                textSize = 18;
+                textSize = 20;
                 break;
             case 14:
-                textSize = 17;
+                textSize = 19;
                 break;
             case 15:
-                textSize = 16;
+                textSize = 18;
                 break;
             default:
                 textSize = 28;
