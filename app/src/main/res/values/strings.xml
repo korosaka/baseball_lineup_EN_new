@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">BaseballStartingLineup</string>
+    <string name="app_name">Baseball Starting Lineup</string>
     <string name="app_title1">Baseball</string>
-    <string name="app_title2">StartingLineup</string>
+    <string name="app_title2">Starting Lineup</string>
     <string name="non_dh_version">Standard Order</string>
     <string name="dh_version">DH Order</string>
     <string name="first">１</string>
@@ -74,7 +74,7 @@
     <string name="policy_title">Privacy policy</string>
     <string name="policy_message1">＜about ad＞</string>
     <string name="policy_message2">This app is using AdMob(Google Inc.) as ad tools, AdMob can get information of users. If you want to know about these info Admob would get, these purpose, or provision to third parties, please check this privacy policy link below.</string>
-    <string name="google_policy"><a href="https://policies.google.com/technologies/ads?hl=ja">Policy about Google Ad</a></string>
+    <string name="google_policy"><a href="https://policies.google.com/technologies/ads?hl=en">Policy about Google Ad</a></string>
     <string name="agree">Agree</string>
     <string name="close">Close</string>
     <string name="ask_finish_app">Finish this app?</string>
