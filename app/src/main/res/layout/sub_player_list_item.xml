@@ -9,9 +9,10 @@
     <Button
         android:id="@+id/sub_order_button"
         android:layout_width="60sp"
-        android:layout_height="wrap_content"
+        android:layout_height="33dp"
         android:background="@drawable/order_num_button_background"
         android:text="@string/sub_label"
+        android:textAllCaps="false"
         android:textSize="22sp"
         android:textStyle="bold" />
 

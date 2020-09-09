@@ -58,8 +58,7 @@ public class StartingPlayerListAdapter extends ArrayAdapter<StartingPlayerListIt
             orderButton.setText(FixedWords.PITCHER_INITIAL);
             positionText.setTextColor(Color.parseColor(FixedWords.COLOR_PITCHER_TEXT));
         } else {
-            String orderNumJP = orderNum + FixedWords.JP_NUMBER;
-            orderButton.setText(orderNumJP);
+            orderButton.setText(MakingOrderActivity.makeOrdinalNumber(orderNum));
         }
         orderButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -312,13 +312,26 @@ public class MakingOrderActivity extends BaseAdActivity implements StartingPlaye
     private void readyInputtingStartingPlayer(int orderNum, String position, String name) {
         requireInputtingPlayer(name);
         spinner.setEnabled(true);
-        tvSelectNum.setText((orderNum + FixedWords.JP_NUMBER));
+        tvSelectNum.setText(makeOrdinalNumber(orderNum));
         selectSpinnerItem(spinner, position);
         if (orderType == FixedWords.DH_ORDER &&
                 orderNum == FixedWords.DH_PITCHER_ORDER) {
             tvSelectNum.setText(FixedWords.PITCHER_INITIAL);
             selectSpinnerItem(spinner, FixedWords.HYPHEN_4);
             spinner.setEnabled(false);
+        }
+    }
+
+    public static String makeOrdinalNumber(int num) {
+        switch (num) {
+            case 1:
+                return "1st";
+            case 2:
+                return "2nd";
+            case 3:
+                return "3rd";
+            default:
+                return num + "th";
         }
     }
 

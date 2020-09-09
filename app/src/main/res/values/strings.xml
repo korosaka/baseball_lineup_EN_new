@@ -14,7 +14,7 @@
     <string name="eighth">８</string>
     <string name="ninth">９</string>
     <string name="pitcher_initial">P</string>
-    <string name="role">role</string>
+    <string name="role">Role</string>
     <string name="role_pitcher">pitcher</string>
     <string name="role_batter">hitter</string>
     <string name="role_runner">runner</string>
