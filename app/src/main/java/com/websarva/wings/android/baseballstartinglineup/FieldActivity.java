@@ -1,15 +1,11 @@
 package com.websarva.wings.android.baseballstartinglineup;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
-public class FieldActivity extends AppCompatActivity {
+public class FieldActivity extends BaseAdActivity {
     //各ポジションのテキスト
     private TextView position1;
     private TextView position2;
@@ -21,32 +17,65 @@ public class FieldActivity extends AppCompatActivity {
     private TextView position8;
     private TextView position9;
     private TextView[] dh = new TextView[6];
+    private TextView orderPitcher;
+    private TextView orderCatcher;
+    private TextView orderFirst;
+    private TextView orderSecond;
+    private TextView orderThird;
+    private TextView orderShort;
+    private TextView orderLeft;
+    private TextView orderCenter;
+    private TextView orderRight;
+    private TextView[] orderDh = new TextView[6];
 
     private int playerNumber = 0;
     private int maxDh = 0;
+    private static int displayCount = 0;
+    private static final int FIRST_TIME = 1;
+    private static final int INTERSTITIAL_AD_FREQUENCY = 5;
+    private int orderType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field);
-        setAdsense();
+        setAdView(findViewById(R.id.ad_view_container_on_field));
+        super.onCreate(savedInstanceState);
+
+        orderType = getIntent().getIntExtra(FixedWords.ORDER_TYPE, FixedWords.NORMAL_ORDER);
+        prepareInterstitialAd();
         bindLayout();
         setPlayerCount();
         hideDh();
         setPlayers();
     }
 
-    //戻るボタン
-    public void onClickBack(View view) {
-        finish();
+    private void prepareInterstitialAd() {
+        displayCount++;
+        if (shouldShowInterstitial()) loadInterstitialAd();
     }
 
-    private void setAdsense() {
-        //広告処理
-        MobileAds.initialize(this, "ca-app-pub-6298264304843789~3706409551");
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+    //戻るボタン
+    public void onClickBack(View view) {
+        backToOrder();
+    }
+
+    public void onClickShareField(View view) {
+        Sharing mSharing = new Sharing(getApplicationContext(), this, findViewById(R.id.field_container));
+        mSharing.share();
+    }
+
+    @Override
+    void keyBackFunction() {
+        backToOrder();
+    }
+
+    private void backToOrder() {
+        if (shouldShowInterstitial()) showInterstitialAd();
+        else finish();
+    }
+
+    private Boolean shouldShowInterstitial() {
+        return (displayCount == FIRST_TIME) || (displayCount % INTERSTITIAL_AD_FREQUENCY == 0);
     }
 
     private void bindLayout() {
@@ -56,7 +85,7 @@ public class FieldActivity extends AppCompatActivity {
         position3 = findViewById(R.id.first);
         position4 = findViewById(R.id.second);
         position5 = findViewById(R.id.third);
-        position6 = findViewById(R.id.shortStop);
+        position6 = findViewById(R.id.short_stop);
         position7 = findViewById(R.id.left);
         position8 = findViewById(R.id.center);
         position9 = findViewById(R.id.right);
@@ -66,46 +95,38 @@ public class FieldActivity extends AppCompatActivity {
         dh[3] = findViewById(R.id.dh4);
         dh[4] = findViewById(R.id.dh5);
         dh[5] = findViewById(R.id.dh6);
+        orderPitcher = findViewById(R.id.pitcher_order);
+        orderCatcher = findViewById(R.id.catcher_order);
+        orderFirst = findViewById(R.id.first_order);
+        orderSecond = findViewById(R.id.second_order);
+        orderThird = findViewById(R.id.third_order);
+        orderShort = findViewById(R.id.short_stop_order);
+        orderLeft = findViewById(R.id.left_order);
+        orderCenter = findViewById(R.id.center_order);
+        orderRight = findViewById(R.id.right_order);
+        orderDh[0] = findViewById(R.id.dh1_order);
+        orderDh[1] = findViewById(R.id.dh2_order);
+        orderDh[2] = findViewById(R.id.dh3_order);
+        orderDh[3] = findViewById(R.id.dh4_order);
+        orderDh[4] = findViewById(R.id.dh5_order);
+        orderDh[5] = findViewById(R.id.dh6_order);
     }
 
     private void hideDh() {
         for (int i = 5; i >= maxDh; i--) {
             dh[i].setVisibility(View.INVISIBLE);
+            orderDh[i].setVisibility(View.INVISIBLE);
         }
     }
 
     private void setPlayerCount() {
-        switch (CurrentOrderVersion.instance.getCurrentVersion()) {
-            case FixedWords.DEFAULT:
+        switch (orderType) {
+            case FixedWords.NORMAL_ORDER:
                 playerNumber = 9;
                 break;
-            case FixedWords.DH:
+            case FixedWords.DH_ORDER:
                 playerNumber = 10;
                 maxDh = 1;
-                break;
-            case FixedWords.ALL10:
-                playerNumber = 10;
-                maxDh = 1;
-                break;
-            case FixedWords.ALL11:
-                playerNumber = 11;
-                maxDh = 2;
-                break;
-            case FixedWords.ALL12:
-                playerNumber = 12;
-                maxDh = 3;
-                break;
-            case FixedWords.ALL13:
-                playerNumber = 13;
-                maxDh = 4;
-                break;
-            case FixedWords.ALL14:
-                playerNumber = 14;
-                maxDh = 5;
-                break;
-            case FixedWords.ALL15:
-                playerNumber = 15;
-                maxDh = 6;
                 break;
         }
     }
@@ -113,41 +134,41 @@ public class FieldActivity extends AppCompatActivity {
     private void setPlayers() {
         int dhCount = 0;
         //ある打順の守備位置dataがどこかのポジションと合致すれば、その打順登録名を守備フィールドに
-        for (int i = 0; i < playerNumber; i++) {
-            switch (CachedPlayerPositionsInfo.instance.getAppropriatePosition(i)) {
-                case "(P)":
-                    if (CurrentOrderVersion.instance.getCurrentVersion() == FixedWords.DH)
-                        setText(position1, i, true);
+        for (int orderNum = 1; orderNum <= playerNumber; orderNum++) {
+            switch (CachedPlayersInfo.instance.getPositionFromCache(orderType, orderNum)) {
+                case FixedWords.PITCHER:
+                    if (orderType == FixedWords.DH_ORDER)
+                        setText(position1, orderPitcher, orderNum, true);
                     else
-                        setText(position1, i, false);
+                        setText(position1, orderPitcher, orderNum, false);
                     break;
-                case "(C)":
-                    setText(position2, i, false);
+                case FixedWords.CATCHER:
+                    setText(position2, orderCatcher, orderNum, false);
                     break;
-                case "(1B)":
-                    setText(position3, i, false);
+                case FixedWords.FIRST_BASE:
+                    setText(position3, orderFirst, orderNum, false);
                     break;
-                case "(2B)":
-                    setText(position4, i, false);
+                case FixedWords.SECOND_BASE:
+                    setText(position4, orderSecond, orderNum, false);
                     break;
-                case "(3B)":
-                    setText(position5, i, false);
+                case FixedWords.THIRD_BASE:
+                    setText(position5, orderThird, orderNum, false);
                     break;
-                case "(SS)":
-                    setText(position6, i, false);
+                case FixedWords.SHORT_STOP:
+                    setText(position6, orderShort, orderNum, false);
                     break;
-                case "(LF)":
-                    setText(position7, i, false);
+                case FixedWords.LEFT:
+                    setText(position7, orderLeft, orderNum, false);
                     break;
-                case "(CF)":
-                    setText(position8, i, false);
+                case FixedWords.CENTER:
+                    setText(position8, orderCenter, orderNum, false);
                     break;
-                case "(RF)":
-                    setText(position9, i, false);
+                case FixedWords.RIGHT:
+                    setText(position9, orderRight, orderNum, false);
                     break;
-                case "(DH)":
+                case FixedWords.DH:
                     if (dhCount >= maxDh) dhCount = 0;
-                    setText(dh[dhCount], i, false);
+                    setText(dh[dhCount], orderDh[dhCount], orderNum, false);
                     dhCount++;
                     break;
                 default:
@@ -156,21 +177,36 @@ public class FieldActivity extends AppCompatActivity {
         }
     }
 
-    private void setText(TextView textView, int num, boolean dhPitcher) {
-        String playerName = CachedPlayerNamesInfo.instance.getAppropriateName(num);
+    private void setText(TextView name, TextView order, int orderNum, boolean dhPitcher) {
+        String playerName = customNameSpace(CachedPlayersInfo.instance.getNameFromCache(orderType, orderNum));
+        name.setText(playerName);
+        if (dhPitcher) order.setText(("[" + FixedWords.PITCHER_INITIAL + "]"));
+        else order.setText(("[" + orderNum + "]"));
 
-        if (dhPitcher) textView.setText(playerName + " (P)");
-        else textView.setText(playerName + " (" + (num + 1) + ")");
 
-        if(playerName.length() < 15){
-            textView.setTextSize(15);
-        } else if(playerName.length() < 17){
-            textView.setTextSize(13);
-        } else if(playerName.length() < 20){
-            textView.setTextSize(11);
-        } else {
-            textView.setTextSize(9);
+        int textSize;
+        switch (playerName.length()) {
+            case 6:
+                textSize = 14;
+                break;
+            case 7:
+                textSize = 12;
+                break;
+            default:
+                textSize = 16;
+                break;
         }
+        name.setTextSize(textSize);
+    }
 
+    private String customNameSpace(String playerName) {
+        switch (playerName.length()) {
+            case 2:
+                return playerName.charAt(0) + FixedWords.SPACE + FixedWords.SPACE + FixedWords.SPACE + playerName.charAt(1);
+            case 3:
+                return playerName.charAt(0) + FixedWords.SPACE + playerName.charAt(1) + FixedWords.SPACE + playerName.charAt(2);
+            default:
+                return playerName;
+        }
     }
 }

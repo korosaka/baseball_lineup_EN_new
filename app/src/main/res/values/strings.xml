@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">BaseballStartingLineup</string>
+    <string name="app_title1">Baseball</string>
+    <string name="app_title2">StartingLineup</string>
+    <string name="non_dh_version">Standard Order</string>
+    <string name="dh_version">DH Order</string>
     <string name="first">１</string>
     <string name="second">２</string>
     <string name="third">３</string>
@@ -9,14 +13,37 @@
     <string name="seventh">７</string>
     <string name="eighth">８</string>
     <string name="ninth">９</string>
-    <string name="unselected">-----</string>
-    <string name="current_num">----</string>
-    <string name="position">----</string>
-    <string name="save">RECORD</string>
+    <string name="pitcher_initial">P</string>
+    <string name="role">role</string>
+    <string name="role_pitcher">pitcher</string>
+    <string name="role_batter">hitter</string>
+    <string name="role_runner">runner</string>
+    <string name="role_fielder">fielder</string>
+    <string name="pitcher_text">(P)</string>
+    <string name="sub_label">Sub</string>
+    <string name="sub">Sub</string>
+    <string name="hyphen_5">-----</string>
+    <string name="hyphen_4">----</string>
+    <string name="save">REGISTER</string>
     <string name="clear">CLEAR</string>
-    <string name="title">Starting Lineup</string>
-    <string name="replace">REPLACE</string>
-    <string name="replace_title">click two buttons!</string>
+    <string name="title"><u>Starting Member</u></string>
+    <string name="sub_title">Sub Member</string>
+    <string name="display_starting">Starting</string>
+    <string name="display_sub">Sub</string>
+    <string name="add_sub">Add Sub</string>
+    <string name="delete_sub">Delete Sub</string>
+    <string-array name="positions">
+        <item>----</item>
+        <item>(P)</item>
+        <item>(C)</item>
+        <item>(1B)</item>
+        <item>(2B)</item>
+        <item>(3B)</item>
+        <item>(SS)</item>
+        <item>(LF)</item>
+        <item>(CF)</item>
+        <item>(RF)</item>
+    </string-array>
     <string-array name="positions_dh">
         <item>----</item>
         <item>(C)</item>
@@ -29,7 +56,7 @@
         <item>(RF)</item>
         <item>(DH)</item>
     </string-array>
-    <string-array name="positions_not_dh">
+    <string-array name="positions_all">
         <item>----</item>
         <item>(P)</item>
         <item>(C)</item>
@@ -40,13 +67,29 @@
         <item>(LF)</item>
         <item>(CF)</item>
         <item>(RF)</item>
+        <item>(DH)</item>
     </string-array>
 
-    <string name="order">DH</string>
-    <string name="subOrder">NO-DH</string>
-    <string name="field">Field</string>
-    <string name="back">Back</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="policy_title">個人情報保護について</string>
+    <string name="policy_message1">＜広告について＞</string>
+    <string name="policy_message2">本アプリでは、広告配信ツールとしてAdMob(Google Inc.)を使用しており、AdMobがご利用者の情報を自動取得する場合がございます。取得する情報、利用目的、第三者への提供等につきましては、以下の広告配信事業者のアプリケーション・プライバシーポリシーのリンクよりご確認ください。</string>
+    <string name="google_policy"><a href="https://policies.google.com/technologies/ads?hl=ja">Google広告に関するポリシー</a></string>
+    <string name="agree">同意する</string>
+    <string name="close">閉じる</string>
+    <string name="ask_finish_app">アプリを終了しますか？</string>
+    <string name="yes">はい</string>
+    <string name="order">ノーマル</string>
+    <string name="subOrder">DH</string>
+    <string name="field">FIELD</string>
+    <string name="back">BACK</string>
     <string name="cancel">CANCEL</string>
-    <string name="menu_of_dh">DH</string>
-    <string name="menu_of_not_dh">NO-DH</string>
+    <string name="exchange">EXCHANGE</string>
+    <string name="require_exchange_title">入れ替える２つの打順を選んでください</string>
+    <string name="require_delete_title">削除する選手を選んでください</string>
+    <string name="announce_limit_sub">控え登録が上限です。</string>
+    <string name="share">LINE/Twitter</string>
+    <string name="no_order">[-]</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
