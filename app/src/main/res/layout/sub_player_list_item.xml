@@ -9,7 +9,7 @@
     <Button
         android:id="@+id/sub_order_button"
         android:layout_width="60sp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/order_num_button_background"
         android:text="@string/sub_label"
         android:textAllCaps="false"
@@ -19,7 +19,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
+        android:layout_marginLeft="2dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -29,32 +29,32 @@
 
             <TextView
                 android:id="@+id/pitcher_label"
-                android:layout_width="wrap_content"
+                android:layout_width="52sp"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@drawable/role_pitcher_on_background"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="1dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 android:text="@string/role_pitcher"
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/batter_label"
-                android:layout_width="wrap_content"
+                android:layout_width="52sp"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@drawable/role_batter_on_background"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="1dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 android:text="@string/role_batter"
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -66,32 +66,32 @@
 
             <TextView
                 android:id="@+id/runner_label"
-                android:layout_width="wrap_content"
+                android:layout_width="52sp"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@drawable/role_runner_on_background"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="1dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 android:text="@string/role_runner"
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/fielder_label"
-                android:layout_width="wrap_content"
+                android:layout_width="52sp"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:background="@drawable/role_fielder_on_background"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="1dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 android:text="@string/role_fielder"
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
