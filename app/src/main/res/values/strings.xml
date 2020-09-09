@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">BaseballStartingLineup</string>
+    <string name="first">１</string>
+    <string name="second">２</string>
+    <string name="third">３</string>
+    <string name="fourth">４</string>
+    <string name="fifth">５</string>
+    <string name="sixth">６</string>
+    <string name="seventh">７</string>
+    <string name="eighth">８</string>
+    <string name="ninth">９</string>
+    <string name="unselected">-----</string>
+    <string name="current_num">----</string>
+    <string name="position">----</string>
+    <string name="save">RECORD</string>
+    <string name="clear">CLEAR</string>
+    <string name="title">Starting Lineup</string>
+    <string name="replace">REPLACE</string>
+    <string name="replace_title">click two buttons!</string>
+    <string-array name="positions_dh">
+        <item>----</item>
+        <item>(C)</item>
+        <item>(1B)</item>
+        <item>(2B)</item>
+        <item>(3B)</item>
+        <item>(SS)</item>
+        <item>(LF)</item>
+        <item>(CF)</item>
+        <item>(RF)</item>
+        <item>(DH)</item>
+    </string-array>
+    <string-array name="positions_not_dh">
+        <item>----</item>
+        <item>(P)</item>
+        <item>(C)</item>
+        <item>(1B)</item>
+        <item>(2B)</item>
+        <item>(3B)</item>
+        <item>(SS)</item>
+        <item>(LF)</item>
+        <item>(CF)</item>
+        <item>(RF)</item>
+    </string-array>
+
+    <string name="order">DH</string>
+    <string name="subOrder">NO-DH</string>
+    <string name="field">Field</string>
+    <string name="back">Back</string>
+    <string name="cancel">CANCEL</string>
+    <string name="menu_of_dh">DH</string>
+    <string name="menu_of_not_dh">NO-DH</string>
+</resources>
