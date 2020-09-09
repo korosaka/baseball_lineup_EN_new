@@ -58,8 +58,7 @@ public class StartingPlayerListAdapter extends ArrayAdapter<StartingPlayerListIt
             orderButton.setText(FixedWords.PITCHER_INITIAL);
             positionText.setTextColor(Color.parseColor(FixedWords.COLOR_PITCHER_TEXT));
         } else {
-            String orderNumJP = orderNum + FixedWords.JP_NUMBER;
-            orderButton.setText(orderNumJP);
+            orderButton.setText(MakingOrderActivity.makeOrdinalNumber(orderNum));
         }
         orderButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -68,7 +67,7 @@ public class StartingPlayerListAdapter extends ArrayAdapter<StartingPlayerListIt
         });
 
         positionText.setText(playerItem.getItemPosition());
-        nameText.setText(customNameSpace(playerItem.getItemName()));
+        nameText.setText(playerItem.getItemName());
         changeTextSize(nameText);
     }
 
@@ -76,28 +75,29 @@ public class StartingPlayerListAdapter extends ArrayAdapter<StartingPlayerListIt
         int lengthOfText = textView.length();
         int textSize;
         switch (lengthOfText) {
-            case 6:
-                textSize = 24;
+            case 10:
+                textSize = 25;
                 break;
-            case 7:
+            case 11:
+                textSize = 23;
+                break;
+            case 12:
+                textSize = 21;
+                break;
+            case 13:
                 textSize = 20;
+                break;
+            case 14:
+                textSize = 19;
+                break;
+            case 15:
+                textSize = 18;
                 break;
             default:
                 textSize = 28;
                 break;
         }
         textView.setTextSize(textSize);
-    }
-
-    private String customNameSpace(String playerName) {
-        switch (playerName.length()) {
-            case 2:
-                return playerName.charAt(0) + FixedWords.SPACE + FixedWords.SPACE + FixedWords.SPACE + playerName.charAt(1);
-            case 3:
-                return playerName.charAt(0) + FixedWords.SPACE + playerName.charAt(1) + FixedWords.SPACE + playerName.charAt(2);
-            default:
-                return playerName;
-        }
     }
 
 }

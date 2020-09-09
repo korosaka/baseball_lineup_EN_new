@@ -186,14 +186,27 @@ public class FieldActivity extends BaseAdActivity {
 
         int textSize;
         switch (playerName.length()) {
-            case 6:
+            case 9:
+                textSize = 15;
+                break;
+            case 10:
                 textSize = 14;
                 break;
-            case 7:
+            case 11:
+                textSize = 13;
+                break;
+            case 12:
+            case 13:
                 textSize = 12;
                 break;
+            case 14:
+                textSize = 11;
+                break;
+            case 15:
+                textSize = 10;
+                break;
             default:
-                textSize = 16;
+                textSize = 17;
                 break;
         }
         name.setTextSize(textSize);

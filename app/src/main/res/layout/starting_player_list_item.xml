@@ -8,22 +8,24 @@
 
     <Button
         android:id="@+id/order_button"
-        android:layout_width="wrap_content"
+        android:layout_width="75sp"
         android:layout_height="wrap_content"
         android:background="@drawable/order_num_button_background"
+        android:textAllCaps="false"
         android:textSize="22sp"
+        android:text="1st"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/position_text"
         android:layout_width="60sp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="13dp"
         android:gravity="center"
+        android:maxLines="1"
         android:text="@string/hyphen_4"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="28sp"
-        android:maxLines="1"
         android:textStyle="bold" />
 
     <TextView
@@ -31,9 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:maxLines="1"
         android:text="@string/hyphen_5"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp"
-        android:maxLines="1"
         android:textStyle="bold" />
 </LinearLayout>

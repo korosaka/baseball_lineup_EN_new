@@ -14,18 +14,16 @@ public class FixedWords {
     public static final String Starting_ORDER = "startingOrder";
     public static final String SUB_MEMBERS = "subMembers";
 
-    public static final String JP_NUMBER = "番";
-    public static final String JP_PEOPLE = "人";
     public static final String PITCHER_INITIAL = "P";
-    public static final String PITCHER = "(投)";
-    public static final String CATCHER = "(捕)";
-    public static final String FIRST_BASE = "(一)";
-    public static final String SECOND_BASE = "(二)";
-    public static final String THIRD_BASE = "(三)";
-    public static final String SHORT_STOP = "(遊)";
-    public static final String LEFT = "(左)";
-    public static final String CENTER = "(中)";
-    public static final String RIGHT = "(右)";
+    public static final String PITCHER = "(P)";
+    public static final String CATCHER = "(C)";
+    public static final String FIRST_BASE = "(1B)";
+    public static final String SECOND_BASE = "(2B)";
+    public static final String THIRD_BASE = "(3B)";
+    public static final String SHORT_STOP = "(SS)";
+    public static final String LEFT = "(LF)";
+    public static final String CENTER = "(CF)";
+    public static final String RIGHT = "(RF)";
     public static final String DH = "(DH)";
 
 

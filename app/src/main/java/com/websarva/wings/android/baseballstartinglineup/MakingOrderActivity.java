@@ -312,13 +312,26 @@ public class MakingOrderActivity extends BaseAdActivity implements StartingPlaye
     private void readyInputtingStartingPlayer(int orderNum, String position, String name) {
         requireInputtingPlayer(name);
         spinner.setEnabled(true);
-        tvSelectNum.setText((orderNum + FixedWords.JP_NUMBER));
+        tvSelectNum.setText(makeOrdinalNumber(orderNum));
         selectSpinnerItem(spinner, position);
         if (orderType == FixedWords.DH_ORDER &&
                 orderNum == FixedWords.DH_PITCHER_ORDER) {
             tvSelectNum.setText(FixedWords.PITCHER_INITIAL);
             selectSpinnerItem(spinner, FixedWords.HYPHEN_4);
             spinner.setEnabled(false);
+        }
+    }
+
+    public static String makeOrdinalNumber(int num) {
+        switch (num) {
+            case 1:
+                return "1st";
+            case 2:
+                return "2nd";
+            case 3:
+                return "3rd";
+            default:
+                return num + "th";
         }
     }
 
@@ -361,7 +374,7 @@ public class MakingOrderActivity extends BaseAdActivity implements StartingPlaye
     }
 
     public void onClickSave(View view) {
-        String playerName = etName.getText().toString();
+        String playerName = etName.getText().toString().toUpperCase();
         if (playerName.equals(FixedWords.EMPTY)) playerName = FixedWords.HYPHEN_5;
         if (showingOrder.equals(FixedWords.Starting_ORDER)) {
             String position = (String) spinner.getSelectedItem();
@@ -602,8 +615,8 @@ public class MakingOrderActivity extends BaseAdActivity implements StartingPlaye
         if (showingOrder.equals(FixedWords.Starting_ORDER)) title.setText(R.string.title);
         else {
             String subPlayerTitle =
-                    getString(R.string.sub_title) + FixedWords.SPACE +
-                            CachedPlayersInfo.instance.getSubMembers(orderType).size() + FixedWords.JP_PEOPLE;
+                    getString(R.string.sub_title) + FixedWords.SPACE + "(" +
+                            CachedPlayersInfo.instance.getSubMembers(orderType).size() + ")";
             title.setText(subPlayerTitle);
         }
     }
