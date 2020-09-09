@@ -615,8 +615,8 @@ public class MakingOrderActivity extends BaseAdActivity implements StartingPlaye
         if (showingOrder.equals(FixedWords.Starting_ORDER)) title.setText(R.string.title);
         else {
             String subPlayerTitle =
-                    getString(R.string.sub_title) + FixedWords.SPACE +
-                            CachedPlayersInfo.instance.getSubMembers(orderType).size() + FixedWords.JP_PEOPLE;
+                    getString(R.string.sub_title) + FixedWords.SPACE + "(" +
+                            CachedPlayersInfo.instance.getSubMembers(orderType).size() + ")";
             title.setText(subPlayerTitle);
         }
     }
