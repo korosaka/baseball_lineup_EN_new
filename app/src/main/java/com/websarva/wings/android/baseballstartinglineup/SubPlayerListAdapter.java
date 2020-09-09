@@ -59,7 +59,7 @@ public class SubPlayerListAdapter extends ArrayAdapter<SubPlayerListItemData> {
             }
         });
 
-        nameText.setText(customNameSpace(playerItem.getName()));
+        nameText.setText(playerItem.getName());
         changeTextSize(nameText);
 
         return view;
@@ -109,11 +109,29 @@ public class SubPlayerListAdapter extends ArrayAdapter<SubPlayerListItemData> {
         int lengthOfText = textView.length();
         int textSize;
         switch (lengthOfText) {
-            case 6:
-                textSize = 24;
+            case 8:
+                textSize = 27;
                 break;
-            case 7:
+            case 9:
+                textSize = 26;
+                break;
+            case 10:
+                textSize = 23;
+                break;
+            case 11:
+                textSize = 21;
+                break;
+            case 12:
                 textSize = 20;
+                break;
+            case 13:
+                textSize = 18;
+                break;
+            case 14:
+                textSize = 17;
+                break;
+            case 15:
+                textSize = 16;
                 break;
             default:
                 textSize = 28;
@@ -121,18 +139,6 @@ public class SubPlayerListAdapter extends ArrayAdapter<SubPlayerListItemData> {
         }
         textView.setTextSize(textSize);
     }
-
-    private String customNameSpace(String playerName) {
-        switch (playerName.length()) {
-            case 2:
-                return playerName.charAt(0) + FixedWords.SPACE + FixedWords.SPACE + FixedWords.SPACE + playerName.charAt(1);
-            case 3:
-                return playerName.charAt(0) + FixedWords.SPACE + playerName.charAt(1) + FixedWords.SPACE + playerName.charAt(2);
-            default:
-                return playerName;
-        }
-    }
-
 
 }
 

@@ -374,7 +374,7 @@ public class MakingOrderActivity extends BaseAdActivity implements StartingPlaye
     }
 
     public void onClickSave(View view) {
-        String playerName = etName.getText().toString();
+        String playerName = etName.getText().toString().toUpperCase();
         if (playerName.equals(FixedWords.EMPTY)) playerName = FixedWords.HYPHEN_5;
         if (showingOrder.equals(FixedWords.Starting_ORDER)) {
             String position = (String) spinner.getSelectedItem();

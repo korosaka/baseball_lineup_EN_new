@@ -81,11 +81,12 @@
 
                 <TextView
                     android:id="@+id/center"
-                    android:layout_width="100sp"
+                    android:layout_width="115sp"
                     android:layout_height="32sp"
                     android:layout_marginRight="14dp"
-                    android:gravity="center"
                     android:background="@drawable/outfielder_name_background"
+                    android:gravity="center"
+                    android:maxLines="1"
                     android:text="@string/hyphen_5"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
@@ -123,10 +124,11 @@
 
                     <TextView
                         android:id="@+id/left"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/outfielder_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -152,10 +154,11 @@
 
                     <TextView
                         android:id="@+id/right"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
                         android:background="@drawable/outfielder_name_background"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -191,10 +194,11 @@
 
                     <TextView
                         android:id="@+id/short_stop"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/infielder_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -219,11 +223,12 @@
 
                     <TextView
                         android:id="@+id/second"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:layout_marginRight="18dp"
                         android:background="@drawable/infielder_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -260,10 +265,11 @@
 
                     <TextView
                         android:id="@+id/third"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/infielder_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -274,8 +280,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:paddingRight="15dp"
-                    android:gravity="end">
+                    android:gravity="end"
+                    android:paddingRight="15dp">
 
                     <TextView
                         android:id="@+id/first_order"
@@ -289,11 +295,12 @@
 
                     <TextView
                         android:id="@+id/first"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
-                        android:text="@string/hyphen_5"
                         android:background="@drawable/infielder_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -318,11 +325,12 @@
 
                 <TextView
                     android:id="@+id/pitcher"
-                    android:layout_width="100sp"
+                    android:layout_width="115sp"
                     android:layout_height="32sp"
-                    android:gravity="center"
                     android:layout_marginRight="13dp"
                     android:background="@drawable/pitcher_name_background"
+                    android:gravity="center"
+                    android:maxLines="1"
                     android:text="@string/hyphen_5"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
@@ -359,10 +367,11 @@
 
                     <TextView
                         android:id="@+id/dh4"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/dh_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -373,8 +382,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:paddingRight="1dp"
-                    android:gravity="end">
+                    android:gravity="end"
+                    android:paddingRight="1dp">
 
                     <TextView
                         android:id="@+id/dh1_order"
@@ -388,10 +397,11 @@
 
                     <TextView
                         android:id="@+id/dh1"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/dh_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -423,10 +433,11 @@
 
                     <TextView
                         android:id="@+id/dh5"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/dh_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -437,8 +448,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:paddingRight="1dp"
-                    android:gravity="end">
+                    android:gravity="end"
+                    android:paddingRight="1dp">
 
                     <TextView
                         android:id="@+id/dh2_order"
@@ -452,10 +463,11 @@
 
                     <TextView
                         android:id="@+id/dh2"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/dh_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -487,10 +499,11 @@
 
                     <TextView
                         android:id="@+id/dh6"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/dh_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -501,8 +514,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:paddingRight="1dp"
-                    android:gravity="end">
+                    android:gravity="end"
+                    android:paddingRight="1dp">
 
                     <TextView
                         android:id="@+id/dh3_order"
@@ -516,10 +529,11 @@
 
                     <TextView
                         android:id="@+id/dh3"
-                        android:layout_width="100sp"
+                        android:layout_width="115sp"
                         android:layout_height="32sp"
-                        android:gravity="center"
                         android:background="@drawable/dh_name_background"
+                        android:gravity="center"
+                        android:maxLines="1"
                         android:text="@string/hyphen_5"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
@@ -545,11 +559,12 @@
 
                 <TextView
                     android:id="@+id/catcher"
-                    android:layout_width="100sp"
+                    android:layout_width="115sp"
                     android:layout_height="32sp"
-                    android:gravity="center"
                     android:layout_marginRight="13dp"
                     android:background="@drawable/catcher_name_background"
+                    android:gravity="center"
+                    android:maxLines="1"
                     android:text="@string/hyphen_5"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
