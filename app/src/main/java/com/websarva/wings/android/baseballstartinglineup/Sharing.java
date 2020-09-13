@@ -44,7 +44,6 @@ public class Sharing {
 
     private String saveImage(Bitmap bitmap) {
         String fileName = "order.jpg";
-        String errorMassage = "エラー発生";
         try {
             String directory = Objects.requireNonNull(mActivity.getExternalFilesDir(Environment.DIRECTORY_PICTURES)).toString();
             File folder = new File(directory);
@@ -60,7 +59,7 @@ public class Sharing {
 
             return directory + "/" + fileName;
         } catch (Exception e) {
-            Toast.makeText(mContext, errorMassage, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, mContext.getString(R.string.errorMassage), Toast.LENGTH_SHORT).show();
         }
         return FixedWords.EMPTY;
     }
@@ -79,14 +78,14 @@ public class Sharing {
     }
 
     private String getTweetMessage() {
-        String message1 = "スタメンを作成しました！";
-        String androidTab = "Android: ";
-        String googlePlayUrl = "bit.ly/2Dqbg6M";
-        String hashTagMessage = "#野球スタメン作成アプリ";
+        String message = mContext.getString(R.string.tweetMessage);
+        String androidTab = mContext.getString(R.string.androidTab);
+        String googlePlayUrl = mContext.getString(R.string.googlePlayUrl);
+        String hashTagMessage = mContext.getString(R.string.hashTagMessage);
         String nextLine = "\n";
-        return message1 + nextLine
-                + androidTab + googlePlayUrl + nextLine + nextLine
-                + hashTagMessage;
+        return message + nextLine
+                + androidTab + FixedWords.SPACE + googlePlayUrl
+                + nextLine + nextLine + hashTagMessage;
     }
 
     public void share() {
