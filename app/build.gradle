@@ -7,8 +7,8 @@ android {
         applicationId "com.websarva.wings.android.baseballstartinglineup"
         minSdkVersion 19
         targetSdkVersion 34
-        versionCode 202311081
-        versionName "1.2.3"
+        versionCode 202408231
+        versionName "1.2.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     namespace "com.websarva.wings.android.baseballstartinglineup"
